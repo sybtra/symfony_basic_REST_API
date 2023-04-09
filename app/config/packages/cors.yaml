@@ -1,0 +1,5 @@
+services:
+    cors.response_listener:
+        class: App\EventListener\CorsListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }

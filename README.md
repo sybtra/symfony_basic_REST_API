@@ -8,13 +8,13 @@ To set up the local server, please follow these steps:
 
 1. Copy the `.env` file to `.env.local` and update any necessary information.
 
-2. Generate a JWT keypair by running the following command in the terminal from the root directory of your project:
-
-symfony console lexik:jwt:generate-keypair
-
-3. Install dependencies by running the following command in the terminal:
+2. Install dependencies by running the following command in the terminal:
 
 composer install
+
+3. Generate a JWT keypair by running the following command in the terminal from the root directory of your project:
+
+symfony console lexik:jwt:generate-keypair
 
 4. Update the database schema by running the following command in the terminal:
 

@@ -1,12 +1,14 @@
-# Atari 2600 (Stella) support for multiple assemblers
-# - DASM
-# - CC65
 
-# Assembled binaries and object directories
-obj/
-a.out
-*.bin
-*.a26
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
 
-# Add in special Atari 7800-based binaries for good measure
-*.a78
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###

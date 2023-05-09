@@ -9,7 +9,7 @@ composer update
 
 ## .env
 Please copy .env to .env.local and update all necessary infos
-- Please overwrite jwt info by running symfony console lexik:jwt:generate-keypair --overwrite
+- Please create jwt info by running symfony console lexik:jwt:generate-keypair
 
 # database
 symfony console doctrine:database:create

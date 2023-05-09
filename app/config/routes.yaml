@@ -1,6 +1,0 @@
-_api:
-    resource: "../src/Controller/"
-    type: attribute
-    prefix: /api
-api_login_check:
-    path: /api/login

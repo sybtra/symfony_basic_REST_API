@@ -1,0 +1,76 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: REST API
+            description: This is an awesome REST API!
+            version: 1.0.0
+        # servers:
+        #   - url: http://localhost:8000/api
+        #     description: API over HTTP
+        #   - url: https://localhost:8000/api/
+        #     description: API over HTTPS
+        components:
+            schemas:
+                User:
+                    type: object
+                    properties:
+                        login:
+                            type: string
+                        password:
+                            type: string
+                        email:
+                            type: string
+                        firstname:
+                            type: string
+                        lastname:
+                            type: string
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+        security:
+            - Bearer: []
+        paths:
+            /api/login:
+                post:
+                    summary: Log in
+                    tags:
+                        - Authentication
+                    requestBody:
+                        content:
+                            application/json:
+                                schema:
+                                    type: object
+                                    required:
+                                        - login
+                                        - password
+                                    properties:
+                                        login:
+                                            type: string
+                                        password:
+                                            type: string
+                    responses:
+                        200:
+                            description: Successful login
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            token:
+                                                type: string
+                        401:
+                            description: Invalid credentials
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            error:
+                                                type: string
+                                                example: Invalid credentials
+
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
